@@ -2,7 +2,7 @@
  * Copyright (C) 2013 the8thlayerof.net
  *
  * GPS cape
- * UART4 on pins P9.11, P9.13
+ * UART2 on pins P9.22, P9.21
  * PPS on pin P8.7
  * TCLKIN on pin P9.41
  *
@@ -26,8 +26,8 @@
         /* state the resources this cape uses */
         exclusive-use =
                 /* the pin header uses */
-                "P9.11",        /* uart4_rxd/GPS TX */
-                "P9.13",        /* uart4_txd/GPS RX */
+                "P9.22",        /* uart2_rxd/GPS TX */
+                "P9.21",        /* uart2_txd/GPS RX */
                 "P8.7",         /* timer4/GPS PPS   */
 		"P9.41A",       /* TCLKIN   */
 		"P9.41B",       /* tied to TCLKIN   */
@@ -70,6 +70,9 @@
 		target = <&ocp>;
 				
                 __overlay__ {
+			P8_07_pinmux { status = "disabled"; };
+			P9_41_pinmux { status = "disabled"; };
+			P9_91_pinmux { status = "disabled"; };
 			pps_gmtimer {
 				compatible = "pps-gmtimer";
 				status = "okay";

@@ -32,6 +32,7 @@ DD-GPS-TCLKIN-00A0.dtbo: DD-GPS-TCLKIN-00A0.dts
 .PHONY: install
 install: DD-GPS-00A0.dtbo DD-GPS-TCLKIN-00A0.dtbo default
 	install -D DD-GPS-00A0.dtbo $(DESTDIR)/lib/firmware/DD-GPS-00A0.dtbo
+	install -D DD-GPS-TCLKIN-00A0.dtbo $(DESTDIR)/lib/firmware/DD-GPS-TCLKIN-00A0.dtbo
 	install -D pps-gmtimer.ko /lib/modules/$(KVERSION)/extra/
 
 endif
